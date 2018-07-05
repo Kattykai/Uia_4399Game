@@ -26,6 +26,7 @@ public class GCTest {
 //        mUiDevice.executeShellCommand("am start -n ")
 
         Thread.sleep(1000);
+        Thread.sleep(1000);
     }
     @Test
     public void ZoneText() throws RemoteException, InterruptedException {
