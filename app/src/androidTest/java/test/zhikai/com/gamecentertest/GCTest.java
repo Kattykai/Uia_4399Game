@@ -20,10 +20,12 @@ public class GCTest {
     public Instrumentation minstrumentation;
     public UiDevice mUiDevice;
     @Before
-    public void setUp(){
+    public void setUp() throws InterruptedException {
         minstrumentation = InstrumentationRegistry.getInstrumentation();
         mUiDevice = UiDevice.getInstance(minstrumentation);
 //        mUiDevice.executeShellCommand("am start -n ")
+
+        Thread.sleep(1000);
     }
     @Test
     public void ZoneText() throws RemoteException, InterruptedException {
