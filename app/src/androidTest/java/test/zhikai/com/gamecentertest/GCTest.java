@@ -1,11 +1,8 @@
 package test.zhikai.com.gamecentertest;
 
-import android.app.Instrumentation;
 import android.os.RemoteException;
-import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
 import android.support.test.uiautomator.By;
-import android.support.test.uiautomator.UiDevice;
 import android.support.test.uiautomator.UiObject2;
 
 import junit.framework.Assert;
@@ -16,17 +13,10 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 @RunWith(AndroidJUnit4.class)
-public class GCTest {
-    public Instrumentation minstrumentation;
-    public UiDevice mUiDevice;
+public class GCTest extends UiaLibrary{
     @Before
-    public void setUp() throws InterruptedException {
-        minstrumentation = InstrumentationRegistry.getInstrumentation();
-        mUiDevice = UiDevice.getInstance(minstrumentation);
-//        mUiDevice.executeShellCommand("am start -n ")
-
-        Thread.sleep(1000);
-        Thread.sleep(1000);
+    public void setUp(){
+        registObject();
     }
     @Test
     public void ZoneText() throws RemoteException, InterruptedException {
