@@ -90,16 +90,16 @@ public class UiaLibrary {
         String c = now.format(time);
         return c;
     }
-//    public void screenShot() {//截图name+time
-//        String name = getName();
-//        File file = new File("/mnt/sdcard/123/");
+    public void screenShot() {//截图name+time
+//        String name = "Screen_";
+//        File file = new File("/sdcard/123");
 //        if (!file.exists()) {
 //            file.mkdirs();
 //        }
-//        File files = new File(file.toString()+"/"+getDayHourMinute()+name+".png");
-//        mUiDevice.takeScreenshot(files);
-//        output("默认截图成功！");
-//    }
+        File files = new File("/sdcard/123"+"/"+getDayHourMinute()+".png");
+        mUiDevice.takeScreenshot(files);
+        output("默认截图成功！");
+    }
     //压缩图片
     public void compressPictureToJpeg(String oldPath, File newFile) throws FileNotFoundException {
         Bitmap bitmap = BitmapFactory.decodeFile(oldPath);//创建并实例化bitmap对象
